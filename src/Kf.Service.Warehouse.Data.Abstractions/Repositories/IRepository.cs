@@ -2,21 +2,23 @@ using Kf.Service.Warehouse.Data.Models;
 
 namespace Kf.Service.Warehouse.Data.Repositories;
 
-public interface IRepositoryBase<TEntity>
+public interface IRepository<TEntity>
     where TEntity : class, IEntity
 {
-    Task<TEntity> Get(
+    Task<IEnumerable<TEntity>> Get(
+        bool withIncludes = false,
         CancellationToken cancellationToken = default);
 
-    Task<TEntity> GetById(
+    Task<TEntity> GetOneById(
         Guid id,
+        bool withIncludes = false,
         CancellationToken cancellationToken = default);
 
     Task<TEntity> Create(
         TEntity entity,
         CancellationToken cancellationToken = default);
 
-    Task Delete(
+    Task<TEntity> Delete(
         Guid id,
         CancellationToken cancellationToken = default);
 
