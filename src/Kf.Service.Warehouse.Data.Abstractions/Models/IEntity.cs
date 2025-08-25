@@ -1,6 +1,6 @@
 namespace Kf.Service.Warehouse.Data.Models;
 
-public interface IEntityWithId
+public interface IEntity
 {
     public Guid Id { get; set; }
 }
