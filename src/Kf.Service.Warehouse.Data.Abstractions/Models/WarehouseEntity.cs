@@ -6,5 +6,5 @@ public class WarehouseEntity : EntityBase
 
     public string Location { get; set; } = string.Empty;
 
-    public List<InventoryEntity> Inventory { get; set; } = [];
+    public List<InventoryEntity> Inventories { get; set; } = [];
 }
