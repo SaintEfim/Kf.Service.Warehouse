@@ -1,6 +1,7 @@
 using Autofac;
 using Kf.Service.Warehouse.Data.PostgreSql.Context;
 using Kf.Service.Warehouse.Data.Repositories;
+using Kf.Service.Warehouse.Data.Repositories.Base;
 
 namespace Kf.Service.Warehouse.Data.PostgreSql;
 

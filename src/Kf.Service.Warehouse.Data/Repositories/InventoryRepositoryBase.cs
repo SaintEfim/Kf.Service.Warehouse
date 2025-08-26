@@ -1,4 +1,5 @@
 using Kf.Service.Warehouse.Data.Models;
+using Kf.Service.Warehouse.Data.Repositories.Base;
 using Microsoft.EntityFrameworkCore;
 
 namespace Kf.Service.Warehouse.Data.Repositories;

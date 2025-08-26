@@ -1,6 +1,6 @@
 using Kf.Service.Warehouse.Data.Models;
 
-namespace Kf.Service.Warehouse.Data.Repositories;
+namespace Kf.Service.Warehouse.Data.Repositories.Base;
 
 public interface IRepository<TEntity>
     where TEntity : class, IEntity

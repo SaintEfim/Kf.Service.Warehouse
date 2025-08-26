@@ -1,7 +1,7 @@
 using Kf.Service.Warehouse.Data.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace Kf.Service.Warehouse.Data.Repositories;
+namespace Kf.Service.Warehouse.Data.Repositories.Base;
 
 public abstract class RepositoryBase<TDbContext, TEntity> : IRepository<TEntity>
     where TDbContext : DbContext

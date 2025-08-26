@@ -13,6 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kf.Service.Warehouse.Data",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kf.Service.Warehouse.Data.PostgreSql", "src\Kf.Service.Warehouse.Data.PostgreSql\Kf.Service.Warehouse.Data.PostgreSql.csproj", "{B1A85F6E-3EB4-400C-B2A1-7F51FE856468}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kf.Service.Warehouse.Domain.Abstractions", "src\Kf.Service.Warehouse.Domain.Abstractions\Kf.Service.Warehouse.Domain.Abstractions.csproj", "{D995A714-8DF3-4A6E-B062-326BD14CCE89}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kf.Service.Warehouse.Domain", "src\Kf.Service.Warehouse.Domain\Kf.Service.Warehouse.Domain.csproj", "{8EF7AFAB-BE3F-4D6C-A852-DCB34F6781F6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,5 +35,13 @@ Global
 		{B1A85F6E-3EB4-400C-B2A1-7F51FE856468}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B1A85F6E-3EB4-400C-B2A1-7F51FE856468}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B1A85F6E-3EB4-400C-B2A1-7F51FE856468}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D995A714-8DF3-4A6E-B062-326BD14CCE89}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D995A714-8DF3-4A6E-B062-326BD14CCE89}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D995A714-8DF3-4A6E-B062-326BD14CCE89}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D995A714-8DF3-4A6E-B062-326BD14CCE89}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8EF7AFAB-BE3F-4D6C-A852-DCB34F6781F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8EF7AFAB-BE3F-4D6C-A852-DCB34F6781F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8EF7AFAB-BE3F-4D6C-A852-DCB34F6781F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8EF7AFAB-BE3F-4D6C-A852-DCB34F6781F6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
