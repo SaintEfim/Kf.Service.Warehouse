@@ -10,7 +10,7 @@ using static Microsoft.AspNetCore.Http.StatusCodes;
 
 namespace Kf.Service.Warehouse.API.Controllers;
 
-[Microsoft.AspNetCore.Components.Route("api/v1/warehouse")]
+[Route("api/v1/warehouse")]
 public class WarehouseController
     : ControllerCrudBase<WarehouseDto, WarehouseModel, IWarehouseManager, IWarehouseProvider>
 {

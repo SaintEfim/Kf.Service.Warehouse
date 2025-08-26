@@ -6,7 +6,9 @@ using Kf.Service.Warehouse.Domain.Services.Base;
 
 namespace Kf.Service.Warehouse.Domain.Services.Warehouse;
 
-public class WarehouseProvider : DataProviderBase<WarehouseModel, WarehouseEntity, IWarehouseRepository>
+public class WarehouseProvider
+    : DataProviderBase<WarehouseModel, WarehouseEntity, IWarehouseRepository>,
+        IWarehouseProvider
 {
     public WarehouseProvider(
         IMapper mapper,

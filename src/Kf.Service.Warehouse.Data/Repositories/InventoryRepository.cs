@@ -4,10 +4,12 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Kf.Service.Warehouse.Data.Repositories;
 
-public class InventoryRepositoryBase<TDbContext> : RepositoryBase<TDbContext, InventoryEntity>
+public class InventoryRepository<TDbContext>
+    : RepositoryBase<TDbContext, InventoryEntity>,
+        IInventoryRepository
     where TDbContext : DbContext
 {
-    protected InventoryRepositoryBase(
+    protected InventoryRepository(
         TDbContext dbContext)
         : base(dbContext)
     {
