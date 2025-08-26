@@ -2,18 +2,15 @@ using Kf.Service.Warehouse.Domain.Models.Base;
 
 namespace Kf.Service.Warehouse.Domain.Services.Base;
 
-public interface IManagerBase<TModel>
+public interface IDataProvider<TModel>
     where TModel : class, IModel
 {
-    Task<TModel> Create(
-        TModel model,
+    Task<TModel> Get(
+        bool withInclude = false,
         CancellationToken cancellationToken = default);
 
-    Task<TModel> Update(
-        TModel model,
-        CancellationToken cancellationToken = default);
-
-    Task<TModel> Delete(
+    Task<TModel> GetOneById(
         Guid id,
+        bool withInclude = false,
         CancellationToken cancellationToken = default);
 }

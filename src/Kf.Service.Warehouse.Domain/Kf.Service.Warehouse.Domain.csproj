@@ -8,6 +8,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\Kf.Service.Warehouse.Data.Abstractions\Kf.Service.Warehouse.Data.Abstractions.csproj" />
+      <ProjectReference Include="..\Kf.Service.Warehouse.Data.PostgreSql\Kf.Service.Warehouse.Data.PostgreSql.csproj" />
       <ProjectReference Include="..\Kf.Service.Warehouse.Domain.Abstractions\Kf.Service.Warehouse.Domain.Abstractions.csproj" />
     </ItemGroup>
 

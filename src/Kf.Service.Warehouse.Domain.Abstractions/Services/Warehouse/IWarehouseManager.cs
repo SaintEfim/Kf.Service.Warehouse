@@ -3,4 +3,4 @@ using Kf.Service.Warehouse.Domain.Services.Base;
 
 namespace Kf.Service.Warehouse.Domain.Services.Warehouse;
 
-public interface IWarehouseManager : IManagerBase<WarehouseModel>;
+public interface IWarehouseManager : IDataManager<WarehouseModel>;

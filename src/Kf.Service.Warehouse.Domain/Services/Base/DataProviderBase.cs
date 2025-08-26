@@ -5,7 +5,7 @@ using Kf.Service.Warehouse.Domain.Models.Base;
 
 namespace Kf.Service.Warehouse.Domain.Services.Base;
 
-public abstract class DataProviderBase<TModel, TEntity, TRepository> : IProviderBase<TModel>
+public abstract class DataProviderBase<TModel, TEntity, TRepository> : IDataProvider<TModel>
     where TModel : class, IModel
     where TEntity : class, IEntity
     where TRepository : IRepository<TEntity>

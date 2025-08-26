@@ -3,4 +3,4 @@ using Kf.Service.Warehouse.Domain.Services.Base;
 
 namespace Kf.Service.Warehouse.Domain.Services.Warehouse;
 
-public interface IWarehouseProvider : IProviderBase<WarehouseModel>;
+public interface IWarehouseProvider : IDataProvider<WarehouseModel>;
