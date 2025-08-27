@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.Extensions.Configuration;
 
 namespace Kf.Service.Warehouse.Data.PostgreSql.Context;
@@ -14,7 +15,7 @@ public class PostgreSqlDbContextFactoryBase<TDbContext>
         _configuration = configuration;
     }
 
-    protected virtual string ConnectionString => string.Empty;
+    protected virtual string ConnectionString => null!;
 
     public TDbContext CreateDbContext()
     {
