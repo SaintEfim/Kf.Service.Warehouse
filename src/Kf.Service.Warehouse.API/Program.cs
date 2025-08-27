@@ -7,11 +7,13 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
 
-builder.Services.AddControllers();
+builder.Services
+    .AddControllers()
+    .AddNewtonsoftJson();
+
 builder.Services.AddOpenApiDocument();
 
-builder.Services.AddAutoMapper(Assembly.GetEntryAssembly()!.GetReferencedAssemblies()
-    .Select(Assembly.Load));
+builder.Services.AddAutoMapper(typeof(AutoMapperProfile).Assembly, Assembly.GetExecutingAssembly());
 
 builder.Host.ConfigureContainer<ContainerBuilder>(containerBuilder =>
 {
@@ -29,4 +31,4 @@ if (app.Environment.IsDevelopment())
 app.UseRouting();
 app.MapControllers();
 
-app.Run();
+await app.RunAsync();
