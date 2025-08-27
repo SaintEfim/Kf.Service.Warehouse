@@ -4,10 +4,12 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Kf.Service.Warehouse.Data.Repositories;
 
-public class WarehouseRepositoryBase<TDbContext> : RepositoryBase<TDbContext, WarehouseEntity>
+public class WarehouseRepository<TDbContext>
+    : RepositoryBase<TDbContext, WarehouseEntity>,
+        IWarehouseRepository
     where TDbContext : DbContext
 {
-    protected WarehouseRepositoryBase(
+    protected WarehouseRepository(
         TDbContext dbContext)
         : base(dbContext)
     {

@@ -6,7 +6,9 @@ using Kf.Service.Warehouse.Domain.Services.Base;
 
 namespace Kf.Service.Warehouse.Domain.Services.Inventory;
 
-public class InventoryManager : DataManagerBase<InventoryModel, InventoryEntity, IInventoryRepository>
+public class InventoryManager
+    : DataManagerBase<InventoryModel, InventoryEntity, IInventoryRepository>,
+        IInventoryManager
 {
     public InventoryManager(
         IMapper mapper,

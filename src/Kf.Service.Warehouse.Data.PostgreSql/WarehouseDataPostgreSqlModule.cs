@@ -1,7 +1,7 @@
 using Autofac;
 using Kf.Service.Warehouse.Data.PostgreSql.Context;
-using Kf.Service.Warehouse.Data.Repositories;
 using Kf.Service.Warehouse.Data.Repositories.Base;
+using Microsoft.EntityFrameworkCore;
 
 namespace Kf.Service.Warehouse.Data.PostgreSql;
 
@@ -10,20 +10,18 @@ public class WarehouseDataPostgreSqlModule : Module
     protected override void Load(
         ContainerBuilder builder)
     {
+        builder.RegisterAssemblyTypes(ThisAssembly)
+            .AsClosedTypesOf(typeof(IRepository<>))
+            .AsImplementedInterfaces();
+
         builder.RegisterType<WarehouseDbContextFactory>()
             .AsSelf()
             .SingleInstance();
 
-        builder.Register(ctx =>
-            {
-                var factory = ctx.Resolve<WarehouseDbContextFactory>();
-                return factory.CreateDbContext();
-            })
+        builder.Register(c => c.Resolve<WarehouseDbContextFactory>()
+                .CreateDbContext())
             .As<WarehouseDbContext>()
+            .As<DbContext>()
             .InstancePerLifetimeScope();
-
-        builder.RegisterAssemblyTypes(ThisAssembly)
-            .AsClosedTypesOf(typeof(IRepository<>))
-            .AsImplementedInterfaces();
     }
 }

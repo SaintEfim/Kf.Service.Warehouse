@@ -1,12 +1,13 @@
+using Kf.Service.Warehouse.Data.PostgreSql.Context;
 using Kf.Service.Warehouse.Data.Repositories;
 using Microsoft.EntityFrameworkCore;
 
 namespace Kf.Service.Warehouse.Data.PostgreSql.Repositories;
 
-public class WarehouseRepositoryBase : WarehouseRepositoryBase<DbContext>
+public class WarehouseRepository : WarehouseRepository<DbContext>
 {
-    public WarehouseRepositoryBase(
-        DbContext dbContext)
+    public WarehouseRepository(
+        WarehouseDbContext dbContext)
         : base(dbContext)
     {
     }

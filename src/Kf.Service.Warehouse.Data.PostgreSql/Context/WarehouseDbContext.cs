@@ -10,7 +10,6 @@ public sealed class WarehouseDbContext : DbContext
         DbContextOptions<WarehouseDbContext> options)
         : base(options)
     {
-        Database.Migrate();
     }
 
     public DbSet<WarehouseEntity> Warehouses { get; set; }

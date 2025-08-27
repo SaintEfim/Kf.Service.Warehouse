@@ -9,8 +9,8 @@ public class AutoMapperProfile : Profile
     public AutoMapperProfile()
     {
         CreateMap<WarehouseEntity, WarehouseModel>()
-            .ForMember(dest => dest.Inventories, opt => opt.Ignore())
-            .ReverseMap();
+            .ReverseMap()
+            .ForMember(dest => dest.Inventories, opt => opt.Ignore());
 
         CreateMap<InventoryEntity, InventoryModel>()
             .ReverseMap();
