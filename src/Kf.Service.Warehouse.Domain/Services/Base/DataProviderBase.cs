@@ -21,11 +21,11 @@ public abstract class DataProviderBase<TModel, TEntity, TRepository> : IDataProv
     protected IMapper Mapper { get; }
     protected TRepository Repository { get; }
 
-    public async Task<TModel> Get(
+    public async Task<IEnumerable<TModel>> Get(
         bool withInclude = false,
         CancellationToken cancellationToken = default)
     {
-        return Mapper.Map<TModel>(await Repository.Get(withInclude, cancellationToken));
+        return Mapper.Map<IEnumerable<TModel>>(await Repository.Get(withInclude, cancellationToken));
     }
 
     public async Task<TModel> GetOneById(

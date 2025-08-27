@@ -1,3 +1,4 @@
+using System.Reflection;
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
 using Kf.Service.Warehouse.Domain;
@@ -8,7 +9,9 @@ builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
 
 builder.Services.AddControllers();
 builder.Services.AddOpenApiDocument();
-builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
+builder.Services.AddAutoMapper(Assembly.GetEntryAssembly()!.GetReferencedAssemblies()
+    .Select(Assembly.Load));
 
 builder.Host.ConfigureContainer<ContainerBuilder>(containerBuilder =>
 {
