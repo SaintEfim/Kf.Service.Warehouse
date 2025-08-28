@@ -44,37 +44,4 @@ public class InventoryController
     {
         return Ok(await GetOneById(id, true, cancellationToken));
     }
-
-    [HttpPost]
-    [OpenApiOperation(nameof(InventoryCreate))]
-    [SwaggerResponse(Status201Created, typeof(InventoryDto))]
-    public Task<IActionResult> InventoryCreate(
-        [FromBody] InventoryCreateDto payload,
-        CancellationToken cancellationToken = default)
-    {
-        return Create(payload, nameof(InventoryGetById), cancellationToken);
-    }
-
-    [HttpPatch("{id:guid}")]
-    [OpenApiOperation(nameof(InventoryUpdate))]
-    [SwaggerResponse(Status200OK, typeof(InventoryDto))]
-    [SwaggerResponse(Status404NotFound, typeof(string))]
-    public async Task<IActionResult> InventoryUpdate(
-        Guid id,
-        [FromBody] JsonPatchDocument<InventoryUpdateDto> patchDocument,
-        CancellationToken cancellationToken = default)
-    {
-        return await Update(id, patchDocument, cancellationToken);
-    }
-
-    [HttpDelete("{id:guid}")]
-    [OpenApiOperation(nameof(InventoryDelete))]
-    [SwaggerResponse(Status204NoContent, typeof(string))]
-    [SwaggerResponse(Status404NotFound, typeof(string))]
-    public async Task<IActionResult> InventoryDelete(
-        Guid id,
-        CancellationToken cancellationToken = default)
-    {
-        return await Delete(id, cancellationToken);
-    }
 }
