@@ -49,7 +49,7 @@ public abstract class ControllerCrudBase<TDto, TModel, TManager, TProvider> : Co
         return Mapper.Map<TDto?>(model);
     }
 
-    protected async Task<IActionResult> Create<TCreateDto>(
+    protected async Task<IActionResult> Create<TCreateDto, TCreatedResultDto>(
         TCreateDto createDto,
         string getByIdRouteName,
         CancellationToken cancellationToken = default)
@@ -57,8 +57,7 @@ public abstract class ControllerCrudBase<TDto, TModel, TManager, TProvider> : Co
     {
         var model = Mapper.Map<TModel>(createDto);
         var created = await Manager.Create(model, cancellationToken);
-        var dto = Mapper.Map<TDto>(created);
-        return CreatedAtRoute(getByIdRouteName, new { id = dto.Id }, dto);
+        return CreatedAtRoute(getByIdRouteName, new { id = created.Id }, Mapper.Map<TCreatedResultDto>(created));
     }
 
     protected async Task<IActionResult> Update<TUpdateDto>(

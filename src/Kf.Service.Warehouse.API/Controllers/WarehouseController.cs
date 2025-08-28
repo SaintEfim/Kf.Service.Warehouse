@@ -1,5 +1,6 @@
 using AutoMapper;
 using Kf.Service.Warehouse.API.Controllers.Base;
+using Kf.Service.Warehouse.API.Models.Base;
 using Kf.Service.Warehouse.API.Models.Warehouse;
 using Kf.Service.Warehouse.Domain.Models;
 using Kf.Service.Warehouse.Domain.Services.Warehouse;
@@ -47,12 +48,12 @@ public class WarehouseController
 
     [HttpPost]
     [OpenApiOperation(nameof(WarehouseCreate))]
-    [SwaggerResponse(Status201Created, typeof(WarehouseDto))]
+    [SwaggerResponse(Status201Created, typeof(CreateActionResultDto))]
     public Task<IActionResult> WarehouseCreate(
         [FromBody] WarehouseCreateDto payload,
         CancellationToken cancellationToken = default)
     {
-        return Create(payload, nameof(WarehouseGetById), cancellationToken);
+        return Create<WarehouseCreateDto, CreateActionResultDto>(payload, nameof(WarehouseGetById), cancellationToken);
     }
 
     [HttpPatch("{id:guid}")]
