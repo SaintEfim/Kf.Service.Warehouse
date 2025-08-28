@@ -11,7 +11,7 @@ using static Microsoft.AspNetCore.Http.StatusCodes;
 
 namespace Kf.Service.Warehouse.API.Controllers;
 
-[Route("api/v1/warehouse")]
+[Route("api/v1/warehouses")]
 public class WarehouseController
     : ControllerCrudBase<WarehouseDto, WarehouseModel, IWarehouseManager, IWarehouseProvider>
 {
