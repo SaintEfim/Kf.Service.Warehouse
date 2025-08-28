@@ -28,10 +28,5 @@ public class AutoMapperProfile : Profile
     {
         CreateMap<InventoryModel, InventoryDto>()
             .ReverseMap();
-
-        CreateMap<InventoryCreateDto, InventoryModel>();
-
-        CreateMap<InventoryUpdateDto, InventoryModel>()
-            .ReverseMap();
     }
 }
