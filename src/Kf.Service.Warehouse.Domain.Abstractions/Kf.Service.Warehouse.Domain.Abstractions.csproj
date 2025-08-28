@@ -7,4 +7,8 @@
         <RootNamespace>Kf.Service.Warehouse.Domain</RootNamespace>
     </PropertyGroup>
 
+    <ItemGroup>
+      <PackageReference Include="Sieve" Version="2.5.5" />
+    </ItemGroup>
+
 </Project>

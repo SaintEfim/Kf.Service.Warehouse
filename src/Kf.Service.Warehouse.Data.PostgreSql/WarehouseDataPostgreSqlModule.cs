@@ -10,6 +10,8 @@ public class WarehouseDataPostgreSqlModule : Module
     protected override void Load(
         ContainerBuilder builder)
     {
+        builder.RegisterModule<WarehouseDataModule>();
+
         builder.RegisterAssemblyTypes(ThisAssembly)
             .AsClosedTypesOf(typeof(IRepository<>))
             .AsImplementedInterfaces();

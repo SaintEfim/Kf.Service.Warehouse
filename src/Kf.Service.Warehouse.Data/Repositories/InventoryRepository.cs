@@ -1,6 +1,7 @@
 using Kf.Service.Warehouse.Data.Models;
 using Kf.Service.Warehouse.Data.Repositories.Base;
 using Microsoft.EntityFrameworkCore;
+using Sieve.Services;
 
 namespace Kf.Service.Warehouse.Data.Repositories;
 
@@ -10,8 +11,9 @@ public class InventoryRepository<TDbContext>
     where TDbContext : DbContext
 {
     protected InventoryRepository(
-        TDbContext dbContext)
-        : base(dbContext)
+        TDbContext dbContext,
+        ISieveProcessor sieveProcessor)
+        : base(dbContext, sieveProcessor)
     {
     }
 }
