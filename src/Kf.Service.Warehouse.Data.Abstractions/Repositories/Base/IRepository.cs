@@ -1,4 +1,6 @@
 using Kf.Service.Warehouse.Data.Models;
+using Kf.Service.Warehouse.Data.Models.Base;
+using Sieve.Models;
 
 namespace Kf.Service.Warehouse.Data.Repositories.Base;
 
@@ -6,6 +8,7 @@ public interface IRepository<TEntity>
     where TEntity : class, IEntity
 {
     Task<IEnumerable<TEntity>> Get(
+        SieveModel? filter,
         bool withIncludes = false,
         CancellationToken cancellationToken = default);
 

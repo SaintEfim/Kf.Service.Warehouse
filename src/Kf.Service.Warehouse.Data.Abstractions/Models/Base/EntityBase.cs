@@ -1,4 +1,4 @@
-namespace Kf.Service.Warehouse.Data.Models;
+namespace Kf.Service.Warehouse.Data.Models.Base;
 
 public class EntityBase : IEntity
 {
