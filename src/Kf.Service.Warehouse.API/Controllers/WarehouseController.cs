@@ -58,7 +58,7 @@ public class WarehouseController
 
     [HttpPatch("{id:guid}")]
     [OpenApiOperation(nameof(WarehouseUpdate))]
-    [SwaggerResponse(Status200OK, typeof(WarehouseDto))]
+    [SwaggerResponse(Status200OK, typeof(void))]
     [SwaggerResponse(Status404NotFound, typeof(string))]
     public async Task<IActionResult> WarehouseUpdate(
         Guid id,
