@@ -1,5 +1,8 @@
 using Kf.Service.Warehouse.Data.Models;
+using Kf.Service.Warehouse.Data.Models.Base;
 using Microsoft.EntityFrameworkCore;
+using Sieve.Models;
+using Sieve.Services;
 
 namespace Kf.Service.Warehouse.Data.Repositories.Base;
 
@@ -8,19 +11,30 @@ public abstract class RepositoryBase<TDbContext, TEntity> : IRepository<TEntity>
     where TEntity : class, IEntity
 {
     protected RepositoryBase(
-        TDbContext dbContext)
+        TDbContext dbContext,
+        ISieveProcessor sieveProcessor)
     {
         DbContext = dbContext;
+        SieveProcessor = sieveProcessor;
     }
 
     private TDbContext DbContext { get; }
 
+    private ISieveProcessor SieveProcessor { get; }
+
     public virtual async Task<IEnumerable<TEntity>> Get(
+        SieveModel? filter,
         bool withIncludes = false,
         CancellationToken cancellationToken = default)
     {
-        return await BuildBaseQuery(withIncludes)
-            .ToListAsync(cancellationToken);
+        var source = BuildBaseQuery(withIncludes);
+
+        if (filter != null)
+        {
+            source = SieveProcessor.Apply(filter, source);
+        }
+
+        return await source.ToListAsync(cancellationToken);
     }
 
     public virtual async Task<TEntity> GetOneById(

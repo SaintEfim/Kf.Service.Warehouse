@@ -4,6 +4,7 @@ using Kf.Service.Warehouse.Domain.Models.Base;
 using Kf.Service.Warehouse.Domain.Services.Base;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
+using Sieve.Models;
 
 namespace Kf.Service.Warehouse.API.Controllers.Base;
 
@@ -31,10 +32,11 @@ public abstract class ControllerCrudBase<TDto, TModel, TManager, TProvider> : Co
     protected IMapper Mapper { get; }
 
     protected async Task<IEnumerable<TDto>> Get(
+        SieveModel? filter,
         bool withIncludes = false,
         CancellationToken cancellationToken = default)
     {
-        var models = await Provider.Get(withIncludes, cancellationToken);
+        var models = await Provider.Get(filter, withIncludes, cancellationToken);
         return Mapper.Map<IEnumerable<TDto>>(models);
     }
 

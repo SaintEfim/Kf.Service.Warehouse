@@ -1,3 +1,5 @@
+using Kf.Service.Warehouse.Data.Models.Base;
+
 namespace Kf.Service.Warehouse.Data.Models;
 
 public class InventoryEntity : EntityBase

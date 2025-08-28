@@ -1,5 +1,6 @@
 using AutoMapper;
 using Kf.Service.Warehouse.Data.Models;
+using Kf.Service.Warehouse.Data.Models.Base;
 using Kf.Service.Warehouse.Data.Repositories.Base;
 using Kf.Service.Warehouse.Domain.Models.Base;
 

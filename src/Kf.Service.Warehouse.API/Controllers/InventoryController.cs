@@ -6,6 +6,7 @@ using Kf.Service.Warehouse.Domain.Services.Inventory;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 using NSwag.Annotations;
+using Sieve.Models;
 using static Microsoft.AspNetCore.Http.StatusCodes;
 
 namespace Kf.Service.Warehouse.API.Controllers;
@@ -26,10 +27,11 @@ public class InventoryController
     [OpenApiOperation(nameof(InventoryGet))]
     [SwaggerResponse(Status200OK, typeof(List<InventoryDto>))]
     public async Task<ActionResult<List<InventoryDto>>> InventoryGet(
+        [FromQuery] SieveModel filter,
         bool withIncludes = false,
         CancellationToken cancellationToken = default)
     {
-        return Ok(await Get(withIncludes, cancellationToken));
+        return Ok(await Get(filter, withIncludes, cancellationToken));
     }
 
     [HttpGet("{id:guid}", Name = nameof(InventoryGetById))]
