@@ -15,7 +15,7 @@ public class PostgreSqlDbContextFactoryBase<TDbContext>
         _configuration = configuration;
     }
 
-    protected virtual string ConnectionString => null!;
+    protected virtual string ConnectionString => string.Empty;
 
     public TDbContext CreateDbContext()
     {
