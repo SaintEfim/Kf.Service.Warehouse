@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace Kf.Service.Warehouse.API.Abstractions.Models.Warehouse;
+namespace Kf.Service.Warehouse.API.Models.Warehouse;
 
 public class WarehouseUpdateDto
 {

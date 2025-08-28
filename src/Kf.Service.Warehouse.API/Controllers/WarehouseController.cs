@@ -1,6 +1,6 @@
 using AutoMapper;
-using Kf.Service.Warehouse.API.Abstractions.Models.Warehouse;
 using Kf.Service.Warehouse.API.Controllers.Base;
+using Kf.Service.Warehouse.API.Models.Warehouse;
 using Kf.Service.Warehouse.Domain.Models;
 using Kf.Service.Warehouse.Domain.Services.Warehouse;
 using Microsoft.AspNetCore.JsonPatch;

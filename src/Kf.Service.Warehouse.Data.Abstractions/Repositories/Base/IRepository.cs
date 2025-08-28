@@ -1,4 +1,3 @@
-using Kf.Service.Warehouse.Data.Models;
 using Kf.Service.Warehouse.Data.Models.Base;
 using Sieve.Models;
 

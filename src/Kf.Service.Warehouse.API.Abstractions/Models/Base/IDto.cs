@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace Kf.Service.Warehouse.API.Abstractions.Models.Base;
+namespace Kf.Service.Warehouse.API.Models.Base;
 
 public interface IDto
 {

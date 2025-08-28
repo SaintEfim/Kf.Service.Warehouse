@@ -1,7 +1,7 @@
 using System.ComponentModel.DataAnnotations;
-using Kf.Service.Warehouse.API.Abstractions.Models.Base;
+using Kf.Service.Warehouse.API.Models.Base;
 
-namespace Kf.Service.Warehouse.API.Abstractions.Models.Inventory;
+namespace Kf.Service.Warehouse.API.Models.Inventory;
 
 public class InventoryDto : DtoBase
 {

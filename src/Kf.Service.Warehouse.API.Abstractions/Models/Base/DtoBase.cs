@@ -1,4 +1,4 @@
-namespace Kf.Service.Warehouse.API.Abstractions.Models.Base;
+namespace Kf.Service.Warehouse.API.Models.Base;
 
 public class DtoBase : IDto
 {

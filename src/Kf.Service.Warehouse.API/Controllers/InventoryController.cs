@@ -1,9 +1,8 @@
 using AutoMapper;
-using Kf.Service.Warehouse.API.Abstractions.Models.Inventory;
 using Kf.Service.Warehouse.API.Controllers.Base;
+using Kf.Service.Warehouse.API.Models.Inventory;
 using Kf.Service.Warehouse.Domain.Models;
 using Kf.Service.Warehouse.Domain.Services.Inventory;
-using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 using NSwag.Annotations;
 using Sieve.Models;
