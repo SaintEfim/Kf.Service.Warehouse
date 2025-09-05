@@ -7,7 +7,7 @@ public interface IDataProvider<TModel>
     where TModel : class, IModel
 {
     Task<IEnumerable<TModel>> Get(
-        SieveModel? filter,
+        SieveModel? filter = null,
         bool withInclude = false,
         CancellationToken cancellationToken = default);
 

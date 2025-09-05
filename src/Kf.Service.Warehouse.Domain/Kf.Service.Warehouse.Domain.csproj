@@ -7,14 +7,20 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\Kf.Service.Inventory.Messages\Kf.Service.Inventory.Messages.csproj" />
       <ProjectReference Include="..\Kf.Service.Warehouse.Data.Abstractions\Kf.Service.Warehouse.Data.Abstractions.csproj" />
       <ProjectReference Include="..\Kf.Service.Warehouse.Data.PostgreSql\Kf.Service.Warehouse.Data.PostgreSql.csproj" />
       <ProjectReference Include="..\Kf.Service.Warehouse.Domain.Abstractions\Kf.Service.Warehouse.Domain.Abstractions.csproj" />
+      <ProjectReference Include="..\Kf.Service.Warehouse.Messages\Kf.Service.Warehouse.Messages.csproj" />
     </ItemGroup>
 
     <ItemGroup>
       <PackageReference Include="Autofac" Version="8.4.0" />
       <PackageReference Include="AutoMapper" Version="14.0.0" />
+      <PackageReference Include="CompareNETObjects" Version="4.84.0" />
+      <PackageReference Include="Confluent.Kafka" Version="2.11.1" />
+      <PackageReference Include="Microsoft.Extensions.Hosting" Version="9.0.8" />
+      <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     </ItemGroup>
 
 </Project>

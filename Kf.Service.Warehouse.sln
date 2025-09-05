@@ -21,6 +21,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kf.Service.Warehouse.API", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kf.Service.Warehouse.API.Abstractions", "src\Kf.Service.Warehouse.API.Abstractions\Kf.Service.Warehouse.API.Abstractions.csproj", "{E6E3516E-98F5-4B87-82CC-B4D3646456D9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kf.Service.Warehouse.Messages", "src\Kf.Service.Warehouse.Messages\Kf.Service.Warehouse.Messages.csproj", "{3995D242-7625-4081-9BCF-75BA63DA127E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kf.Service.Inventory.Messages", "src\Kf.Service.Inventory.Messages\Kf.Service.Inventory.Messages.csproj", "{938D74B6-B444-4CEA-9025-AA4F9966129C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -55,5 +59,13 @@ Global
 		{E6E3516E-98F5-4B87-82CC-B4D3646456D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E6E3516E-98F5-4B87-82CC-B4D3646456D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E6E3516E-98F5-4B87-82CC-B4D3646456D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3995D242-7625-4081-9BCF-75BA63DA127E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3995D242-7625-4081-9BCF-75BA63DA127E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3995D242-7625-4081-9BCF-75BA63DA127E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3995D242-7625-4081-9BCF-75BA63DA127E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{938D74B6-B444-4CEA-9025-AA4F9966129C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{938D74B6-B444-4CEA-9025-AA4F9966129C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{938D74B6-B444-4CEA-9025-AA4F9966129C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{938D74B6-B444-4CEA-9025-AA4F9966129C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
