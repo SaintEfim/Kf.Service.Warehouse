@@ -219,6 +219,7 @@ public abstract class KafkaMessageBusBase<TMessageHandler> : IDisposable
             BootstrapServers = configKafka.Value.BootstrapServers,
             SessionTimeoutMs = configKafka.Value.HandleConfiguration.MessageTimeoutMs,
             EnableAutoCommit = false,
+            AutoOffsetReset = AutoOffsetReset.Earliest,
             GroupId = configKafka.Value.HandleConfiguration.GroupId
         };
 

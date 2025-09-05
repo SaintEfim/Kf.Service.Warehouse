@@ -15,6 +15,8 @@ public class MessageBusInitializationService : BackgroundService
     protected override Task ExecuteAsync(
         CancellationToken stoppingToken)
     {
-        return _topicCreator.CreateTopic(stoppingToken);
+        // Если захотим создавать топики при запуске сервиса
+        //return _topicCreator.CreateTopic(stoppingToken);
+        return Task.CompletedTask;
     }
 }
