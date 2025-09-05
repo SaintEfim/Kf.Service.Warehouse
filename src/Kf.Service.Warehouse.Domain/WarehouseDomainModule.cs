@@ -2,6 +2,7 @@ using Autofac;
 using Kf.Service.Warehouse.Data.PostgreSql;
 using Kf.Service.Warehouse.Domain.Services.Base;
 using Kf.Service.Warehouse.Domain.Services.Base.Kafka;
+using Kf.Service.Warehouse.Domain.Services.Base.Kafka.Handlers;
 using Kf.Service.Warehouse.Domain.Services.Inventory;
 
 namespace Kf.Service.Warehouse.Domain;
@@ -38,5 +39,17 @@ public class WarehouseDomainModule : Module
         builder.RegisterAssemblyTypes(ThisAssembly)
             .AssignableTo<IInventoryMessageHandler>()
             .Keyed<IInventoryMessageHandler>(t => GetMessageHandlerKey(t));
+
+        builder.RegisterType<MessageBusHandleManager>()
+            .AsImplementedInterfaces()
+            .SingleInstance();
+
+        builder.RegisterType<KafkaTopicCreator>()
+            .As<ITopicCreator>()
+            .SingleInstance();
+
+        builder.RegisterType<MessageBusInitializationService>()
+            .AsImplementedInterfaces()
+            .SingleInstance();
     }
 }
