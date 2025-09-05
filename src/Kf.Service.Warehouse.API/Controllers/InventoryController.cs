@@ -43,4 +43,16 @@ public class InventoryController
     {
         return Ok(await GetOneById(id, true, cancellationToken));
     }
+
+    [HttpPost("/sync")]
+    [OpenApiOperation(nameof(InventoriesSync))]
+    [SwaggerDefaultResponse]
+    [SwaggerResponse(Status404NotFound, typeof(string))]
+    public async Task<IActionResult> InventoriesSync(
+        CancellationToken cancellationToken = default)
+    {
+        await Manager.Sync(cancellationToken: cancellationToken);
+
+        return Ok();
+    }
 }

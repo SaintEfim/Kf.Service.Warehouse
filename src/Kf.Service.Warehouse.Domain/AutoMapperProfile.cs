@@ -1,4 +1,5 @@
 using AutoMapper;
+using Kf.Service.Inventory.Messages.Inventory;
 using Kf.Service.Warehouse.Data.Models;
 using Kf.Service.Warehouse.Domain.Models;
 
@@ -13,6 +14,9 @@ public class AutoMapperProfile : Profile
             .ForMember(dest => dest.Inventories, opt => opt.Ignore());
 
         CreateMap<InventoryEntity, InventoryModel>()
+            .ReverseMap();
+
+        CreateMap<InventoryModel, InventoryData>()
             .ReverseMap();
     }
 }
